@@ -16,5 +16,28 @@
     line-height: 16px;
     display: flex;
     align-items: center;
-    color: #9AA0B9;
+    color: #9AA0B9 !important;
 }
+
+.col > * {
+    margin-bottom: 15px;
+}
+
+button.submitButton, button.submitButton:focus, button.submitButton:hover  {
+    padding: 19px 75px;
+    width: 300px;
+    height: 57px;
+    background: linear-gradient(94.77deg, #21B69B 46.15%, #45C881 105.05%);
+    border-radius: 12px;
+
+    font-family: Manrope;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 19px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+
+    border: none;
+}
+

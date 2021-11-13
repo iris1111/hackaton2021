@@ -1,7 +1,83 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './../style/CalcStep1.css';
-import { Radio } from 'antd';
+import { Form, Input, Button, Radio } from 'antd';
+import { InfoCircleOutlined } from '@ant-design/icons';
+import './../style/CalcStep1.css';
 
+type RequiredMark = boolean | 'optional';
+
+const CalcStep1 = () => {
+  const [form] = Form.useForm();
+  const [requiredMark, setRequiredMarkType] = useState<RequiredMark>('optional');
+
+  const onRequiredTypeChange = ({ requiredMarkValue }: { requiredMarkValue: RequiredMark }) => {
+    setRequiredMarkType(requiredMarkValue);
+  };
+
+  const renderType = () => {
+    const  data  = types
+    let template
+          
+    if (data.length) {
+      template = data.map(function(item) {
+        return <Radio className="form-text" value={item.id}>{item.text}</Radio>
+      })
+    } 
+          
+    return template
+  }
+
+  return (
+    <React.Fragment>
+      <div className="block block-1 calc">
+        <h1>Данные</h1>
+        <Form
+          form={form}
+          layout="vertical"
+          initialValues={{ requiredMarkValue: requiredMark }}
+          onValuesChange={onRequiredTypeChange}
+          requiredMark={requiredMark}
+        >
+          
+          
+          
+          
+          <div className="col">
+
+            <Form.Item label="Required Mark" name="requiredMarkValue">
+            <Radio.Group>
+              <Radio.Button value="optional">Optional</Radio.Button>
+              <Radio.Button value>Required</Radio.Button>
+              <Radio.Button value={false}>Hidden</Radio.Button>
+            </Radio.Group>
+          </Form.Item>
+          <Form.Item label="Field A" required tooltip="This is a required field">
+            <Input placeholder="input placeholder" />
+          </Form.Item>
+          <Form.Item
+            label="Field B"
+            tooltip={{ title: 'Tooltip with customize icon', icon: <InfoCircleOutlined /> }}
+          >
+            <Input placeholder="input placeholder" />
+          </Form.Item>            
+
+            <div className="types">
+              <Radio.Group name="type">
+                {renderType()}
+              </Radio.Group>
+            </div>
+
+            <Form.Item>
+              <Button type="primary" className="submitButton">Рассчитать</Button>
+            </Form.Item>
+          </div>
+        </Form>
+      </div>      
+    </React.Fragment>
+  );
+};
+
+export default CalcStep1;
 
 /*
 function CalcStep12() {
@@ -37,78 +113,3 @@ const types = [
     text: 'Парник'
   }
 ];
-/*
-class Article extends React.Component {
-  state = {
-    visible: false,
-  }
-  handleReadMoreClck = () => {
-    //e.preventDefault()
-    //this.setState({ visible: true })
-  }
-  render() {
-    const { author, text, bigText } = this.props.data
-    const { visible } = this.state
-    return (
-      <div className='article'>
-        <p className='news__author'>{author}:</p>
-        <p className='news__text'>{text}</p>
-        {
-          !visible && <a onClick={this.handleReadMoreClck} href="#" className='news__readmore'>Подробнее</a>
-        }
-        {
-          visible && <p className='news__big-text'>{bigText}</p>
-        }
-      </div>
-    )
-  }
-}
-
-Article.propTypes = {
-  data: PropTypes.shape({
-    text: PropTypes.string.isRequired
-  })
-}
-*/
-
-class Types extends React.Component <any> {
-  renderType = () => {
-    const { data } = this.props
-    let template
-          
-    if (data.length) {
-      template = data.map(function(item) {
-        return <Radio value={item.id}>{item.text}</Radio>
-      })
-    } 
-          
-    return template
-  }
-  render() {
-    const { data } = this.props
-          
-    return (
-      <div className="types form-text">
-        <Radio.Group name="type">
-         {this.renderType()}
-        </Radio.Group>
-      </div>
-    );
-  }
-}
-
-const CalcStep1 = () => {
-  return (
-    <React.Fragment>
-      <div className="block block-1 calc">
-        <h1>Данные</h1>
-
-        <div className="col">
-          <Types data={types}/>
-        </div>
-      </div>      
-    </React.Fragment>
-  )
-}
-
-export default CalcStep1;
