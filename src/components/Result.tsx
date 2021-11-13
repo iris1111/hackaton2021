@@ -19,8 +19,14 @@ import {
 
 function Result(props) {
   const options: ApexOptions = {
-    labels: ["Apple", "Mango", "Orange", "Watermelon"],
-    dataLabels: { enabled: false },
+    labels: [
+      "Электроэнергия",
+      "Полив",
+      "Содержание оборудования",
+      "Прочие расходы",
+    ],
+    dataLabels: { enabled: true },
+
     chart: {
       width: "100%",
     },
@@ -33,7 +39,10 @@ function Result(props) {
           seriesName + " - <strong>" + series[opts.seriesIndex] + "</strong>"
         );
       },
+      showForSingleSeries: true,
+      showForZeroSeries: true,
     },
+
     fill: {
       type: "gradient",
     },
@@ -54,7 +63,7 @@ function Result(props) {
       },
     },
   };
-  const series = [44, 55, 41, 17, 15];
+  const series = [44000, 10500, 43134, 7000];
   const locations = require("../data/locations.json");
   const placemarks: GeoObjectProps<PlacemarkGeometry>[] = [
     {
@@ -125,14 +134,14 @@ function Result(props) {
 
   const lineSeries = [
     {
-      name: "Website Blog",
+      name: "",
       type: "column",
-      data: [440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160],
+      data: [-1040, -505, -414, -171, 227, 413, 201, 352, 752, 320, 257, 160],
     },
     {
-      name: "Social Media",
+      name: "Прибыль",
       type: "line",
-      data: [440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160],
+      data: [-1040, -505, -414, -171, 227, 413, 201, 352, 752, 320, 257, 160],
     },
   ];
   return (
@@ -168,9 +177,9 @@ function Result(props) {
           </Map>
         </YMaps>
       </div>
-      <div className="result-item">
+      <div className="result-item-last">
         <div className="result-item_subitem-top">
-          <h1 className="result-item__title">Экономический эффект</h1>
+          <h1 className="result-item__title">Прибыль</h1>
           <Chart
             type="line"
             options={lineOptions}
@@ -179,7 +188,17 @@ function Result(props) {
           ></Chart>
         </div>
         <div className="result-item_subitem-bottom">
-          <div className="result-item_subitem-card"></div>
+          <div className="card-total">
+            <div className="card-total-title">Итог</div>
+          </div>
+          <div className="card-info">
+            <div className="card-occup">
+              <span>Срок окупаемости</span>
+            </div>
+            <div className="card-occup-number">5</div>
+          </div>
+          <div className="card-rent">Рентабельность</div>
+          <div className="card-rent-value">Высокая</div>
         </div>
       </div>
     </div>
