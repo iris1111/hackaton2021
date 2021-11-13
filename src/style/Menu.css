@@ -40,17 +40,41 @@
   background-image: url(./../files/menu4.png);
 }
 
+.Menu-entity {
+  background-image: url(./../files/menu1a.png);
+}
+
+.Menu-dop {
+  background-image: url(./../files/menu2a.png);
+}
+
+.Menu-sett {
+  background-image: url(./../files/menu3a.png);
+}
+
 @media screen and (max-width:750px) {
   .Menu {
     height: 64px;
     min-height: 64px;
+    width: 100%;
+    text-align: left;
   }
 
   .Menu-nav { 
-    display: none;
+    display: block;
+    float: left;
+    top: inherit;
+    margin-top: -10px;
+    position: relative;    
+  }
+
+  .Menu-nav li { 
+    float: left;
   }
 
   .Menu-logo {
-    margin-top: -10px;
+    margin-top: -10px;    
+    float: left;
+    margin-right: calc(50% - 120px);
   }
 }
