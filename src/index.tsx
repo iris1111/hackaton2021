@@ -6,6 +6,7 @@ import App from "./pages/App";
 import "./style/index.css";
 import culturesData from "./data/cultures.json";
 import ResultPage from "./pages/ResultPage";
+import Formula from "./pages/Formula";
 
 // localStorage.setItem("cultures", JSON.stringify(culturesData));
 
@@ -15,6 +16,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/admin/formula" element={<Formula />} />
         <Route path="/result" element={<ResultPage />} />
       </Routes>
     </React.StrictMode>

@@ -1,0 +1,105 @@
+.formula {
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px 40px;
+}
+.formula-block {
+  border-radius: 15px;
+}
+.blue {
+  background: linear-gradient(91.41deg, #20a6cd 56.88%, #77cfe9 103.55%);
+}
+.text-black {
+  color: #000;
+}
+.text-blue {
+  color: #1ea5cc;
+}
+.formula-wrapper {
+  max-width: 750px;
+  padding: 20px 40px;
+  color: white;
+}
+.formula-label {
+  text-align: left;
+  padding: 10px 0;
+}
+.formula-input {
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+.formula-main-label {
+  font-size: 18px;
+}
+.formula-input-save {
+  color: #000;
+  font-weight: 600;
+  position: absolute;
+  right: 45px;
+  top: 11px;
+}
+.formula-input-save:hover {
+  color: #000;
+}
+.formula-coef-wrapper {
+  border: 1px solid rgba(180, 184, 201, 0.5);
+  border-radius: 15px;
+  width: 100%;
+  padding: 20px 40px;
+  margin-top: 20px;
+}
+.formula-label-coef {
+  font-size: 18px;
+}
+.coef-slider-block {
+  max-width: 750px;
+}
+.coef-info {
+  color: rgba(154, 160, 185, 1);
+  margin-top: 40px;
+}
+.slider-coef {
+  max-width: 400px;
+}
+.slider-coef-value {
+  font-size: 18px;
+  font-weight: bold;
+}
+.slider-min-point {
+  position: absolute;
+  width: 14px;
+  height: 15px;
+  left: 0px;
+  top: 8px;
+  border-radius: 100px;
+  background: #dcdfeb;
+  z-index: 100;
+}
+.slider-min-value {
+  position: absolute;
+  width: 14px;
+  height: 15px;
+  left: 0px;
+  top: 24px;
+  z-index: 100;
+  color: rgba(154, 160, 185, 1);
+}
+.slider-max-point {
+  position: absolute;
+  width: 14px;
+  height: 15px;
+  right: 0px;
+  top: -23px;
+  border-radius: 100px;
+  background: #dcdfeb;
+  z-index: 100;
+}
+.slider-max-value {
+  position: absolute;
+  width: 14px;
+  height: 15px;
+  right: 0px;
+  top: -8px;
+  z-index: 100;
+  color: rgba(154, 160, 185, 1);
+}
