@@ -3,7 +3,20 @@ import { ApexOptions } from "apexcharts";
 import React from "react";
 import Chart from "react-apexcharts";
 import "../style/Result.css";
-function Result() {
+import {
+  YMaps,
+  Map,
+  Circle,
+  Polygon,
+  GeoObject,
+  YMapsApi,
+  MapProps,
+  Placemark,
+  PlacemarkGeometry,
+  GeoObjectProps,
+} from "react-yandex-maps";
+
+function Result(props) {
   const options: ApexOptions = {
     labels: ["Apple", "Mango", "Orange", "Watermelon"],
     dataLabels: { enabled: false },
@@ -40,8 +53,26 @@ function Result() {
       },
     },
   };
-
   const series = [44, 55, 41, 17, 15];
+  const locations = require("../data/locations.json");
+  const placemarks: GeoObjectProps<PlacemarkGeometry>[] = [
+    {
+      geometry: [56.675123, 48.072345],
+      options: {
+        hasBalloon: false,
+        hasHint: false,
+      },
+    },
+    {
+      geometry: [56.6579, 48.097642],
+    },
+    {
+      geometry: [56.688083, 47.993455],
+    },
+    {
+      geometry: [56.593755, 47.69358],
+    },
+  ];
   return (
     <div className="result-content">
       <div className="result-item">
@@ -54,10 +85,26 @@ function Result() {
         ></Chart>
       </div>
       <div className="result-item">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
-        ducimus alias sint amet maxime dolore et explicabo culpa. Atque quo
-        laudantium inventore odio aliquam vero temporibus repudiandae. Illo, eum
-        in.
+        <h1 className="result-item__title">Карта региона</h1>
+        <YMaps>
+          <Map
+            className="result-map"
+            //   instanceRef={(map) => (mapRef = map)}
+            defaultState={{ center: props.map.center, zoom: 10 }}
+            //   onLoad={(ymaps) => getRegions(ymaps)}
+            modules={[
+              "borders",
+              "ObjectManager",
+              "geocode",
+              "geoObject.addon.balloon",
+              "geoObject.addon.hint",
+            ]}
+          >
+            {placemarks.map((placemark) => {
+              return <Placemark {...placemark}></Placemark>;
+            })}
+          </Map>
+        </YMaps>
       </div>
       <div className="result-item">
         <div className="result-item_subitem-top"></div>

@@ -13,7 +13,7 @@ function ResultPage() {
       <Menu />
       <div className="content">
         <Bread />
-        <Result />
+        <Result map={{ center: [56.631657, 47.885973] }} />
       </div>
     </div>
   );

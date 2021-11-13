@@ -14,3 +14,8 @@
 .result-item:last-child {
   margin-right: 0;
 }
+.result-map {
+  width: 100%;
+  height: 400px;
+  padding: 15px;
+}
