@@ -3,6 +3,7 @@
   min-height: 54px;
   padding: 12px;
   width: 100%;
+  height: 50px;
 }
 
 .Bread-list {
@@ -11,19 +12,19 @@
 }
 
 .Bread-list li {
-  display: inline-block;  
+  display: inline-block;
 }
 
 .Bread-list li a {
-  display: inline-block;  
+  display: inline-block;
   height: 30px;
   border: 1px solid rgba(180, 184, 201, 0.5);
   box-sizing: border-box;
-  border-radius: 25px; 
+  border-radius: 25px;
   position: relative;
   margin-right: 24px;
   padding: 0 24px;
-  color: #21B69B;
+  color: #21b69b;
   font-family: Manrope;
   font-style: normal;
   font-weight: bold;
@@ -34,10 +35,11 @@
   text-decoration: none;
 }
 
-.Bread-list li.active a, .Bread-list li:hover a {
-  background: #21B69B;
+.Bread-list li.active a,
+.Bread-list li:hover a {
+  background: #21b69b;
   color: #ffffff;
-  border: 1px solid #21B69B;
+  border: 1px solid #21b69b;
 }
 
 .Bread-list li:not(:last-child) a:after {
@@ -45,20 +47,18 @@
   display: inline-block;
   position: absolute;
   left: calc(100% + 8px);
-  color: #21B69B;
+  color: #21b69b;
 }
 
-
-@media screen and (max-width:750px) { 
+@media screen and (max-width: 750px) {
   .Bread {
     border-radius: 30px;
     min-height: 30px;
     padding: 3px 10px;
   }
-  
-  
+
   .Bread-list li a {
-    display: inline-block;  
+    display: inline-block;
     height: 16px;
     border: none;
     position: relative;
@@ -68,10 +68,8 @@
     line-height: 16px;
     border-radius: 8px;
   }
-    
+
   .Bread-list li:not(:last-child) a:after {
     left: calc(100% + 2px);
   }
-
-
 }

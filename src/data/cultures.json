@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "name": "Пшеница",
+    "tempStart": 21,
+    "tempEnd": 30,
+    "vlazhStart": 400,
+    "vlazhEnd": 800,
+    "pochva": "Takaya",
+    "phPochvaStart": 4.5,
+    "phPochvaEnd": 7
+  },
+  {
+    "id": 2,
+    "name": "Ячмень",
+    "tempStart": 21,
+    "tempEnd": 30,
+    "vlazhStart": 400,
+    "vlazhEnd": 800,
+    "pochva": "Takaya",
+    "phPochvaStart": 4.5,
+    "phPochvaEnd": 7
+  }
+]
