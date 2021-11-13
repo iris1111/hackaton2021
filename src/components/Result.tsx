@@ -2,6 +2,7 @@ import { render } from "@testing-library/react";
 import { ApexOptions } from "apexcharts";
 import React from "react";
 import Chart from "react-apexcharts";
+import ReactApexChart from "react-apexcharts";
 import "../style/Result.css";
 import {
   YMaps,
@@ -73,6 +74,67 @@ function Result(props) {
       geometry: [56.593755, 47.69358],
     },
   ];
+
+  const lineOptions: ApexOptions = {
+    chart: {
+      height: 350,
+      type: "line",
+    },
+    stroke: {
+      width: [0, 4],
+    },
+    legend: {
+      show: false,
+    },
+    dataLabels: {
+      enabled: false,
+      enabledOnSeries: [1],
+    },
+    labels: [
+      "01 Jan 2001",
+      "02 Jan 2001",
+      "03 Jan 2001",
+      "04 Jan 2001",
+      "05 Jan 2001",
+      "06 Jan 2001",
+      "07 Jan 2001",
+      "08 Jan 2001",
+      "09 Jan 2001",
+      "10 Jan 2001",
+      "11 Jan 2001",
+      "12 Jan 2001",
+    ],
+    xaxis: {
+      type: "datetime",
+    },
+    yaxis: [
+      {
+        show: false,
+        title: {
+          text: "Website Blog",
+        },
+      },
+      {
+        opposite: true,
+        title: {
+          text: "Social Media",
+        },
+      },
+    ],
+  };
+
+  const lineSeries = [
+    {
+      name: "Website Blog",
+      type: "column",
+      data: [440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160],
+    },
+    {
+      name: "Social Media",
+      type: "line",
+      data: [440, 505, 414, 671, 227, 413, 201, 352, 752, 320, 257, 160],
+    },
+  ];
   return (
     <div className="result-content">
       <div className="result-item">
@@ -107,12 +169,18 @@ function Result(props) {
         </YMaps>
       </div>
       <div className="result-item">
-        <div className="result-item_subitem-top"></div>
-        <div className="result-item_subitem-bottom"></div>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur dolor
-        suscipit distinctio voluptate ipsam recusandae repudiandae. Velit
-        laborum reprehenderit adipisci, et nemo quos consequuntur, delectus
-        accusantium rem sed eligendi. Pariatur.
+        <div className="result-item_subitem-top">
+          <h1 className="result-item__title">Экономический эффект</h1>
+          <Chart
+            type="line"
+            options={lineOptions}
+            series={lineSeries}
+            height={200}
+          ></Chart>
+        </div>
+        <div className="result-item_subitem-bottom">
+          <div className="result-item_subitem-card"></div>
+        </div>
       </div>
     </div>
   );
