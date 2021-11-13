@@ -21,7 +21,7 @@ function Result(props) {
   const options: ApexOptions = {
     labels: [
       "Электроэнергия",
-      "Полив",
+      "Орошение",
       "Содержание оборудования",
       "Прочие расходы",
     ],
