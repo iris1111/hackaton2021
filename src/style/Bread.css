@@ -1,0 +1,77 @@
+.Bread {
+  border-radius: 50px;
+  min-height: 54px;
+  padding: 12px;
+  width: 100%;
+}
+
+.Bread-list {
+  list-style-type: none;
+  float: left;
+}
+
+.Bread-list li {
+  display: inline-block;  
+}
+
+.Bread-list li a {
+  display: inline-block;  
+  height: 30px;
+  border: 1px solid rgba(180, 184, 201, 0.5);
+  box-sizing: border-box;
+  border-radius: 25px; 
+  position: relative;
+  margin-right: 24px;
+  padding: 0 24px;
+  color: #21B69B;
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.Bread-list li.active a, .Bread-list li:hover a {
+  background: #21B69B;
+  color: #ffffff;
+  border: 1px solid #21B69B;
+}
+
+.Bread-list li:not(:last-child) a:after {
+  content: ">";
+  display: inline-block;
+  position: absolute;
+  left: calc(100% + 8px);
+  color: #21B69B;
+}
+
+
+@media screen and (max-width:750px) { 
+  .Bread {
+    border-radius: 30px;
+    min-height: 30px;
+    padding: 3px 10px;
+  }
+  
+  
+  .Bread-list li a {
+    display: inline-block;  
+    height: 16px;
+    border: none;
+    position: relative;
+    margin-right: 12px;
+    padding: 0 10px;
+    font-size: 9px;
+    line-height: 16px;
+    border-radius: 8px;
+  }
+    
+  .Bread-list li:not(:last-child) a:after {
+    left: calc(100% + 2px);
+  }
+
+
+}

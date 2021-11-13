@@ -1,0 +1,56 @@
+.Menu {
+  width: 64px;
+  border-radius: 82px;
+  padding: 24px 12px;
+  min-height: 280px;
+}
+
+.Menu-logo {
+  margin-bottom: 10px;
+}
+
+.Menu-nav {
+  position: absolute;
+  top: calc(50% - 80px);
+  list-style-type: none;
+}
+
+.Menu-nav > li > a {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+.Menu-nav > li:hover {
+  opacity: 0.3;
+}
+
+.Menu-graph {
+  background-image: url(./../files/menu1.png);
+}
+
+.Menu-maps {
+  background-image: url(./../files/menu2.png);
+}
+
+.Menu-people {
+  background-image: url(./../files/menu3.png);
+}
+
+.Menu-faq {
+  background-image: url(./../files/menu4.png);
+}
+
+@media screen and (max-width:750px) {
+  .Menu {
+    height: 64px;
+    min-height: 64px;
+  }
+
+  .Menu-nav { 
+    display: none;
+  }
+
+  .Menu-logo {
+    margin-top: -10px;
+  }
+}

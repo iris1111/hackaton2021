@@ -1,0 +1,32 @@
+.block {
+  border-radius: 12px;
+  background-color: #ffffff;
+  padding: 19px 32px;
+  margin: 0 20px 20px 0;
+}
+
+.block-1 {
+  width: 100%;
+}
+
+.block-2 {
+  width: 50%;
+}
+
+.block-3 {
+  width: 33.33333%;
+}
+
+.App {
+  text-align: center;
+  background-color: #f6f7fc;
+  display: flex;
+  min-height: 100%;
+  padding: 20px;
+}
+
+@media screen and (max-width:750px) {
+  .App {
+    flex-direction: column;
+  }
+}

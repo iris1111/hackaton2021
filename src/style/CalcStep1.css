@@ -1,0 +1,20 @@
+.col {
+    max-width: 520px;
+    float: left;
+}
+
+.calc {
+    overflow: hidden;
+}
+
+
+.form-text {
+    font-family: Manrope;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: #9AA0B9;
+}
