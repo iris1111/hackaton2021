@@ -24,7 +24,7 @@
 }
 
 button.submitButton, button.submitButton:focus, button.submitButton:hover  {
-    padding: 19px 75px;
+    padding: 19px 40px;
     width: 300px;
     height: 57px;
     background: linear-gradient(94.77deg, #21B69B 46.15%, #45C881 105.05%);
