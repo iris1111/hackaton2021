@@ -7,14 +7,20 @@
 
 .block-1 {
   width: 100%;
+  overflow: hidden;
 }
 
 .block-2 {
   width: 50%;
+  overflow: hidden;
+  float: left;
 }
 
 .block-3 {
   width: 33.33333%;
+  overflow: hidden;
+  float: left;
+  padding-right: 45px;
 }
 
 .App {
