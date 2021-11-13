@@ -24,7 +24,7 @@
 }
 
 button.submitButton, button.submitButton:focus, button.submitButton:hover  {
-    padding: 19px 75px;
+    padding: 19px 40px;
     width: 300px;
     height: 57px;
     background: linear-gradient(94.77deg, #21B69B 46.15%, #45C881 105.05%);
@@ -41,3 +41,18 @@ button.submitButton, button.submitButton:focus, button.submitButton:hover  {
     border: none;
 }
 
+
+.form-label {
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
+  color: #26143D;
+  text-align: left;
+  margin-bottom: 4px;
+}
+
+p {
+    text-align: left;
+}
