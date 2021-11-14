@@ -6,7 +6,7 @@ import CalcStep1 from "./CalcStep1";
 function Main() {
   return (
     <div className="Main">
-      <Bread />
+      <Bread title="Калькулятор" />
       <CalcStep1 />
     </div>
   );

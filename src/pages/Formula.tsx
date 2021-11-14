@@ -87,9 +87,9 @@ function Formula() {
 
   return (
     <div className="App">
-      <Menu type="set"/>
+      <Menu type="set" />
       <div className="content">
-        <Bread />
+        <Bread title="Формула" />
         <div className="formula">
           <h1 className="formula-title">Формула</h1>
           <div className="formula-block blue">

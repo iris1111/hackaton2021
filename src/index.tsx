@@ -13,7 +13,8 @@ import AdminEdit from "./pages/AdminEdit";
 import AdminEditEntity from "./pages/AdminEditEntity";
 import AdminParamsEdit from "./pages/AdminParamsEdit";
 import AdminParams from "./pages/AdminParams";
-
+import Main from "./components/Main";
+import Show from "./pages/Show";
 
 if (!localStorage.getItem("cultures")) {
   localStorage.setItem("cultures", JSON.stringify(culturesData));
@@ -37,6 +38,7 @@ ReactDOM.render(
         <Route path="/admin/params" element={<AdminParams />} />
         <Route path="/admin/params/edit" element={<AdminParamsEdit />} />
         <Route path="/result" element={<ResultPage />} />
+        <Route path="/main" element={<Show />} />
       </Routes>
     </React.StrictMode>
   </BrowserRouter>,
