@@ -10,7 +10,7 @@ function ResultPage() {
     <div className="App">
       <Menu />
       <div className="content">
-        <Bread />
+        <Bread title="Бизнес-планер"/>
         <Result map={{ center: [56.631657, 47.885973] }} />
       </div>
     </div>
