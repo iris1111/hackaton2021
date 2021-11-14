@@ -27,6 +27,44 @@ function Formula() {
       },
     });
   };
+  const incrementCoef = () => {
+    let newCoef = +coef! + 1;
+    console.log(newCoef);
+    setCoef(newCoef);
+    localStorage.setItem("coef", newCoef!.toString());
+    if (!notified) {
+      setTimeout(() => {
+        notification["success"]({
+          message: "Успешно сохранено!",
+          className: "notification-success",
+          style: {
+            width: 400,
+          },
+        });
+        setNotified(false);
+      }, 1000);
+    }
+    setNotified(true);
+  };
+  const decrementCoef = () => {
+    let newCoef = +coef! - 1;
+    console.log(newCoef);
+    setCoef(newCoef);
+    localStorage.setItem("coef", newCoef!.toString());
+    if (!notified) {
+      setTimeout(() => {
+        notification["success"]({
+          message: "Успешно сохранено!",
+          className: "notification-success",
+          style: {
+            width: 400,
+          },
+        });
+        setNotified(false);
+      }, 1000);
+    }
+    setNotified(true);
+  };
   const updateCoef = function (newCoef) {
     setCoef(newCoef);
     localStorage.setItem("coef", newCoef!.toString());
@@ -105,6 +143,28 @@ function Formula() {
                       className={coef === 10 ? "" : "slider-max-point"}
                     ></div>
                     <div className="slider-max-value">{sliderMax / 10}</div>
+                  </div>
+                </div>
+                <div className="coef-form">
+                  <div
+                    onClick={() => decrementCoef()}
+                    className="coef-form-decrement"
+                  >
+                    <span>-</span>
+                  </div>
+                  <div className="coef-form-input">
+                    <Input
+                      className="coef-form-input__input"
+                      placeholder={(+coef! / 10).toString()}
+                      value={(+coef! / 10).toString()}
+                      onChange={(event) => updateCoef(+event.target.value * 10)}
+                    ></Input>
+                  </div>
+                  <div
+                    onClick={() => incrementCoef()}
+                    className="coef-form-increment"
+                  >
+                    <span>+</span>
                   </div>
                 </div>
                 <div className="coef-info">

@@ -103,3 +103,54 @@
   z-index: 100;
   color: rgba(154, 160, 185, 1);
 }
+.coef-form {
+  max-width: 400px;
+  margin-top: 20px;
+  z-index: 10;
+}
+.coef-form-input__input {
+  background: #fefefe;
+  border: 1px solid #26143d;
+  box-sizing: border-box;
+  border-radius: 12px;
+  width: 70px;
+  text-align: center;
+  height: 40px;
+}
+.coef-form-decrement {
+  position: absolute;
+  background: #fefefe;
+  border: 1px solid #d2d5e2;
+  box-sizing: border-box;
+  border-radius: 12px;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  width: 33px;
+  height: 40px;
+  text-align: center;
+  left: 125px;
+  cursor: pointer;
+  z-index: 20;
+}
+.coef-form-increment {
+  position: absolute;
+  background: #fefefe;
+  border: 1px solid #d2d5e2;
+  box-sizing: border-box;
+  border-radius: 12px;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  width: 33px;
+  height: 40px;
+  top: 0;
+  text-align: center;
+  right: 125px;
+  cursor: pointer;
+  z-index: 20;
+}
+.coef-form-decrement > span {
+  display: block;
+  top: 8px;
+}
+.coef-form-increment > span {
+  display: block;
+  top: 8px;
+}
