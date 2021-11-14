@@ -69,6 +69,7 @@ function Result(props) {
   const electr = Math.ceil(Math.random() * (48000 - 46777) + 46777);
   const water = Math.ceil(Math.random() * (9500 - 10500) + 10500);
   const tech = Math.ceil(Math.random() * (41314 - 43314) + 43314);
+  const all = Math.ceil(Math.random() * (300 - 256) + 256);
 
   const series = [electr, water, tech];
   const locations = require("../data/locations.json");
@@ -198,7 +199,7 @@ function Result(props) {
             </div>
             <div>
               <div className="block-2 card-big">5 <span>лет</span></div>
-              <div className="block-2 card-big">1 330 <span>млн. руб.</span></div>
+              <div className="block-2 card-big">1 {all} <span>млн. руб.</span></div>
             </div>
           </div>
           <div className="card-sup">Рентабельность</div>
