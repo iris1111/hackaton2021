@@ -51,6 +51,17 @@
 .Menu-sett {
   background-image: url(./../files/menu3a.png);
 }
+.Menu-entity.active {
+  background-image: url(./../files/menu1aa.png);
+}
+
+.Menu-dop.active {
+  background-image: url(./../files/menu2aa.png);
+}
+
+.Menu-sett.active {
+  background-image: url(./../files/menu3aa.png);
+}
 
 @media screen and (max-width:750px) {
   .Menu {

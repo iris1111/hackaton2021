@@ -4,23 +4,22 @@ import "./../style/content.css";
 import Menu from "../components/MenuAdmin";
 import Bread from "../components/Bread";
 import CultureList from "../components/CultureList";
-import img from '../files/admin1.png';
+import img from '../files/admin4.png';
 
-function Admin() {
+function AdminParams() {
   let cultures = require("../data/cultures.json");
   return (
     <div className="App">
-      <Menu type="entity"/>
+      <Menu  type="dop"/>
       <div className="content">
         <Bread />
         <div className="block block-1">
-          <h1>Основные параметры</h1>
-          <a href="/admin/edit"><img src={img} alt="" /></a>
-        </div>        
+          <h1>Вспомогательные параметры</h1>
+          <a href="/admin/params/edit"><img src={img} alt="" /></a>
+        </div>
       </div>
     </div>
   );
 }
 
-export default Admin;
-/*<CultureList data={cultures}></CultureList>*/
+export default AdminParams;
