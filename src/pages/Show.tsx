@@ -14,10 +14,7 @@ function Show() {
           <a href="/admin">Админ панель</a>
         </p>
         <p>
-          <a href="/#">Видеопрезентация 1</a>
-        </p>
-        <p>
-          <a href="/#">Видеопрезентация 2</a>
+          <a href="https://share.getcloudapp.com/5zu9PrLR">Скринкаст</a>
         </p>
       </div>
     </div>
