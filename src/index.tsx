@@ -6,16 +6,17 @@ import App from "./pages/App";
 import "./style/index.css";
 import ResultPage from "./pages/ResultPage";
 import Formula from "./pages/Formula";
+import culturesData from "./data/cultures.json";
 import locationsData from "./data/locations.json";
 import regionsData from "./data/regions.json";
 
-if(!localStorage.getItem("cultures")) {
+if (!localStorage.getItem("cultures")) {
   localStorage.setItem("cultures", JSON.stringify(culturesData));
 }
-if(!localStorage.getItem("locations")) {
+if (!localStorage.getItem("locations")) {
   localStorage.setItem("locations", JSON.stringify(locationsData));
 }
-if(!localStorage.getItem("regions")) {
+if (!localStorage.getItem("regions")) {
   localStorage.setItem("regions", JSON.stringify(regionsData));
 }
 
