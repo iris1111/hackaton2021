@@ -56,7 +56,3 @@ const CalcStep3 = () => {
 };
 
 export default CalcStep3;
-
-/*
-
-*/

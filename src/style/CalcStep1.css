@@ -1,6 +1,7 @@
 .col {
     max-width: 520px;
     float: left;
+    text-align: left;
 }
 
 .calc {
@@ -20,7 +21,7 @@
 }
 
 .col > * {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 button.submitButton, button.submitButton:focus, button.submitButton:hover  {
@@ -50,9 +51,17 @@ button.submitButton, button.submitButton:focus, button.submitButton:hover  {
   line-height: 20px;
   color: #26143D;
   text-align: left;
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
 p {
     text-align: left;
+}
+
+
+button.submitButtonWhite, button.submitButtonWhite:focus, button.submitButtonWhite:hover  {
+    width: 100%;
+    height: 57px;
+    background: #ffffff;
+    color: rgb(55, 61, 63);
 }

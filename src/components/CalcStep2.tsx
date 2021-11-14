@@ -2,20 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import CalcStep3 from "./CalcStep3";
 
-const cults = [
-  {
-    id: 1,
-    text: "Капуста",
-  },
-  {
-    id: 2,
-    text: "Картофель",
-  },
-  {
-    id: 3,
-    text: "Свекла",
-  },
-];
+const cultures = JSON.parse(localStorage.getItem("cultures")!);
 
 const CalcStep2 = ({ type }) => {
   let result = Math.random() < 0.5;
@@ -25,12 +12,12 @@ const CalcStep2 = ({ type }) => {
     ReactDOM.render(<CalcStep3 />, document.querySelector(".step3"));
   };
 
-  if (result) {
-    template = cults.map(function (item) {
+  if (false) {
+    template = cultures.map(function (item) {
       if (item.id != type.cult)
         return (
           <p className="form-p">
-            <a onClick={() => step3()}>{item.text}</a>
+            <a onClick={() => step3()}>{item.name}</a>
           </p>
         );
     });
@@ -41,9 +28,10 @@ const CalcStep2 = ({ type }) => {
         </p>
         <p>
           Условия для хорошего урожая и стабильной прибыли выбранной культуры в
-          этом районе отстутствуют. Предалагем рассчитать бизнес-план для других
-          культур в этом районе:{" "}
-        </p>{" "}
+          этом районе отстутствуют.
+        </p>
+        <br />
+        <p>Предлагаем рассчитать бизнес-план для других культур: </p>
         {template}
       </div>
     );
