@@ -4,7 +4,7 @@ import "./../style/content.css";
 import Menu from "../components/MenuAdmin";
 import Bread from "../components/Bread";
 import CultureList from "../components/CultureList";
-import img from '../files/admin1.png';
+import img from '../files/admin2.png';
 
 function AdminEdit() {
   return (
