@@ -13,17 +13,17 @@ import "../style/Result.css";
 
 function Result(props) {
   const options: ApexOptions = {
-    labels: ["Электроэнергия", "Орошение", "Содержание оборудования"],
+    labels: ["Электроэнергия <br>&nbsp;", "Орошение <br>&nbsp;", "Амортизация <br>&nbsp;"],
     dataLabels: { enabled: true },
     colors: [
       function ({ value, seriesIndex, w }) {
-        return "#205868";
+        return "#1ea4ca";
       },
       function ({ value, seriesIndex, w }) {
-        return "#00ff00";
+        return "#20a47f";
       },
       function ({ value, seriesIndex, w }) {
-        return "#0000ff";
+        return "#f62962";
       },
     ],
     chart: {
@@ -46,6 +46,8 @@ function Result(props) {
 
     fill: {
       type: "gradient",
+      gradient: {
+      }
     },
     plotOptions: {
       pie: {
@@ -64,7 +66,12 @@ function Result(props) {
       },
     },
   };
-  const series = [44000, 10500, 43134];
+  const electr = Math.ceil(Math.random() * (48000 - 46777) + 46777);
+  const water = Math.ceil(Math.random() * (9500 - 10500) + 10500);
+  const tech = Math.ceil(Math.random() * (41314 - 43314) + 43314);
+  const all = Math.ceil(Math.random() * (300 - 256) + 256);
+
+  const series = [electr, water, tech];
   const locations = require("../data/locations.json");
   const placemarks: GeoObjectProps<PlacemarkGeometry>[] = [
     {
@@ -101,19 +108,19 @@ function Result(props) {
       enabledOnSeries: [1],
     },
     labels: [
-      "01 Dec 2021",
-      "02 Jul 2021",
-      "01 Dec 2022",
-      "02 Jul 2022",
-      "01 Dec 2023",
-      "02 Jul 2023",
-      "01 Dec 2024",
-      "02 Jul 2024",
-      "01 Dec 2025",
-      "02 Jul 2025",
+      "апр 21",
+      "сен 21",
+      "апр 22",
+      "сен 22",
+      "апр 23",
+      "сен 23",
+      "апр 24",
+      "сен 24",
+      "апр 25",
+      "сен 25",
     ],
     xaxis: {
-      type: "datetime",
+      type: "category",
     },
     yaxis: [
       {
@@ -133,13 +140,8 @@ function Result(props) {
 
   const lineSeries = [
     {
-      name: "",
-      type: "column",
-      data: [-1040, -705, -814, -571, -427, -113, -201, 2, -12, 320, 457, 660],
-    },
-    {
       name: "Прибыль",
-      type: "line",
+      type: "column",
       data: [-1040, -705, -814, -571, -427, -113, -201, 2, -12, 320, 457, 660],
     },
   ];
@@ -191,13 +193,17 @@ function Result(props) {
             <div className="card-total-title">Итог</div>
           </div>
           <div className="card-info">
-            <div className="card-occup">
-              <span>Срок окупаемости</span>
+            <div>
+              <div className="block-2 card-sup">Срок окупаемости</div>
+              <div className="block-2 card-sup">Стартовый капитал</div>
             </div>
-            <div className="card-occup-number">5</div>
+            <div>
+              <div className="block-2 card-big">5 <span>лет</span></div>
+              <div className="block-2 card-big">1 {all} <span>млн. руб.</span></div>
+            </div>
           </div>
-          <div className="card-rent">Рентабельность</div>
-          <div className="card-rent-value">Высокая</div>
+          <div className="card-sup">Рентабельность</div>
+          <div className="card-big">Высокая</div>
           <Button type="primary" className="submitButton submitButtonWhite">
             Сохранить в PDF
           </Button>

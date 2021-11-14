@@ -6,6 +6,10 @@ const CalcStep3 = () => {
     window.location.pathname = "/result";
   };
 
+  const electr = Math.ceil(Math.random() * (18758 - 12045) + 12045);
+  const water = Math.ceil(Math.random() * (22900 - 19867) + 19867);
+  const tech = Math.ceil(Math.random() * (234986 - 197789) + 197789);
+
   return (
     <div className="block-3">
       <p className="form-label">Рассчет затрат на производство</p>
@@ -15,13 +19,13 @@ const CalcStep3 = () => {
           понадобится: <br />
           <ul>
             <li>
-              <b>электроэнергии</b> - 15000 кВт
+              <b>электроэнергии</b> - {electr} кВт
             </li>
             <li>
-              <b>воды</b> - 20000 м<sup>3</sup>
+              <b>воды</b> - {water} м<sup>3</sup>
             </li>
             <li>
-              <b>затраты на содержание оборудование</b> - 200 000 рублей
+              <b>затраты на содержание оборудование</b> - {tech} рублей
             </li>
           </ul>
         </p>
@@ -41,7 +45,7 @@ const CalcStep3 = () => {
         >
           <Input placeholder="0" />
         </Form.Item>
-        <Form.Item>
+        <Form.Item  className="button-btn">
           <Button
             type="primary"
             className="submitButton"

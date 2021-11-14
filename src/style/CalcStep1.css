@@ -65,3 +65,11 @@ button.submitButtonWhite, button.submitButtonWhite:focus, button.submitButtonWhi
     background: #ffffff;
     color: rgb(55, 61, 63);
 }
+
+.button-btn {
+}
+
+.calc > .block-3 {
+    padding-bottom: 70px;
+}
+
