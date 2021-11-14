@@ -117,7 +117,7 @@ const CalcStep1 = () => {
                 </Radio.Group>
               </Form.Item>
 
-              <Form.Item>
+              <Form.Item className="button-btn">
                 <Button
                   type="primary"
                   className="submitButton"

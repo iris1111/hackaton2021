@@ -12,7 +12,7 @@ const CalcStep2 = ({ type }) => {
     ReactDOM.render(<CalcStep3 />, document.querySelector(".step3"));
   };
 
-  if (false) {
+  if (result) {
     template = cultures.map(function (item) {
       if (item.id != type.cult)
         return (
