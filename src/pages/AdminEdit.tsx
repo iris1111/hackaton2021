@@ -13,8 +13,8 @@ function AdminEdit() {
       <div className="content">
         <Bread />
         <div className="block block-1">
-          <h1>Растения</h1>
-          <a href="/admin/edit/entity"><img src={img} alt="" /></a>
+          <h1>Культура</h1>
+          <img src={img} alt="" />
         </div>        
       </div>
     </div>

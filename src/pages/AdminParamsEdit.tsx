@@ -14,7 +14,7 @@ function AdminParamsEdit() {
       <div className="content">
         <Bread />
         <div className="block block-1">
-          <h1>Редактирование дополнительного параметра</h1>
+          <h1>Влажность</h1>
           <img src={img} alt="" />
         </div>
       </div>

@@ -14,7 +14,7 @@ function AdminParams() {
       <div className="content">
         <Bread />
         <div className="block block-1">
-          <h1>Дополнительные параметры</h1>
+          <h1>Вспомогательные параметры</h1>
           <a href="/admin/params/edit"><img src={img} alt="" /></a>
         </div>
       </div>
