@@ -52,3 +52,7 @@
 .block img {
   max-width: 100%;
 }
+
+.ant-radio-group {
+  display: flex !important;
+}
