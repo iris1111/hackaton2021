@@ -3,7 +3,7 @@ import "./../style/App.css";
 import "./../style/content.css";
 import Menu from "../components/Menu";
 import Bread from "../components/Bread";
-import { Input, Slider } from "antd";
+import { Input, Slider, notification } from "antd";
 import "../style/Formula.css";
 import oldFormulaJson from "../data/formula.json";
 
@@ -16,13 +16,33 @@ function Formula() {
     null !== localStorage.getItem("coef") ? localStorage.getItem("coef") : 7;
   const [formula, setFormula] = useState(oldFormula);
   const [coef, setCoef] = useState(oldCoef);
-
+  const [notified, setNotified] = useState(false);
   const updateFormula = () => {
     localStorage.setItem("formula", formula!);
+    notification["success"]({
+      message: "Успешно сохранено!",
+      className: "notification-success",
+      style: {
+        width: 400,
+      },
+    });
   };
-  const updateCoef = (newCoef) => {
+  const updateCoef = function (newCoef) {
     setCoef(newCoef);
     localStorage.setItem("coef", newCoef!.toString());
+    if (!notified) {
+      setTimeout(() => {
+        notification["success"]({
+          message: "Успешно сохранено!",
+          className: "notification-success",
+          style: {
+            width: 400,
+          },
+        });
+        setNotified(false);
+      }, 1000);
+    }
+    setNotified(true);
   };
   const sliderMin = 0;
   const sliderMax = 10;
