@@ -4,6 +4,15 @@
     text-align: left;
 }
 
+@media screen and (max-width: 750px) {
+    .col {
+        max-width: 100%;
+    }
+    .ant-select {
+        max-width: 100%;
+    }
+}
+
 .calc {
     overflow: hidden;
 }
