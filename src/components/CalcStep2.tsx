@@ -1,51 +1,56 @@
-import React, { useState } from 'react';
-import CalcStep3 from './CalcStep3';
+import React from "react";
 import ReactDOM from "react-dom";
-
-const types = [
-  {
-    id: 1,
-    text: 'Открытый грунт'
-  },
-  {
-    id: 2,
-    text: 'Парник'
-  }
-];
+import CalcStep3 from "./CalcStep3";
 
 const cults = [
   {
     id: 1,
-    text: 'Капуста'
+    text: "Капуста",
   },
   {
     id: 2,
-    text: 'Картофель'
+    text: "Картофель",
   },
   {
     id: 3,
-    text: 'Свекла'
-  }
+    text: "Свекла",
+  },
 ];
 
-const CalcStep2 = ({type}) => {
+const CalcStep2 = ({ type }) => {
   let result = Math.random() < 0.5;
-  let template
+  let template;
 
   const step3 = () => {
-    ReactDOM.render(<CalcStep3 />, document.querySelector('.step3'))
-  }
+    ReactDOM.render(<CalcStep3 />, document.querySelector(".step3"));
+  };
 
-  if(result) {
-    template = cults.map(function(item) {
-      if(item.id != type.cult)
-      return <p className="form-p"><a onClick={() => step3() }>{item.text}</a></p>
-    })
-    return <div className="block-3"><p className="form-label">Выращивание данной культуры не рекомендуется в выбранном районе</p><p>Условия для хорошего урожая и стабильной прибыли выбранной культуры в этом районе отстутствуют. Предалагем рассчитать бизнес-план для других культур в этом районе: </p> {template}</div>
+  if (result) {
+    template = cults.map(function (item) {
+      if (item.id != type.cult)
+        return (
+          <p className="form-p">
+            <a onClick={() => step3()}>{item.text}</a>
+          </p>
+        );
+    });
+    return (
+      <div className="block-3">
+        <p className="form-label">
+          Выращивание данной культуры не рекомендуется в выбранном районе
+        </p>
+        <p>
+          Условия для хорошего урожая и стабильной прибыли выбранной культуры в
+          этом районе отстутствуют. Предалагем рассчитать бизнес-план для других
+          культур в этом районе:{" "}
+        </p>{" "}
+        {template}
+      </div>
+    );
   } else {
-    step3()
-    return <div></div>
+    step3();
+    return <div></div>;
   }
-}
+};
 
 export default CalcStep2;

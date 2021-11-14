@@ -1,21 +1,14 @@
-import { render } from "@testing-library/react";
 import { ApexOptions } from "apexcharts";
 import React from "react";
 import Chart from "react-apexcharts";
-import ReactApexChart from "react-apexcharts";
-import "../style/Result.css";
 import {
-  YMaps,
+  GeoObjectProps,
   Map,
-  Circle,
-  Polygon,
-  GeoObject,
-  YMapsApi,
-  MapProps,
   Placemark,
   PlacemarkGeometry,
-  GeoObjectProps,
+  YMaps,
 } from "react-yandex-maps";
+import "../style/Result.css";
 
 function Result(props) {
   const options: ApexOptions = {
@@ -64,7 +57,6 @@ function Result(props) {
     },
   };
   const series = [44000, 10500, 43134, 7000];
-  const locations = require("../data/locations.json");
   const placemarks: GeoObjectProps<PlacemarkGeometry>[] = [
     {
       geometry: [56.675123, 48.072345],

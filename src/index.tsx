@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Admin from "./pages/Admin";
 import App from "./pages/App";
 import "./style/index.css";
-import culturesData from "./data/cultures.json";
 import ResultPage from "./pages/ResultPage";
 import Formula from "./pages/Formula";
 

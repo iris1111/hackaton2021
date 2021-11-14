@@ -1,20 +1,18 @@
-import React, { useState } from 'react';
+import { Button, Form, notification, Radio, Select } from "antd";
+import React from "react";
 import ReactDOM from "react-dom";
-import CalcStep2 from './CalcStep2';
-import './../style/CalcStep1.css';
-import { Form, Input, Button, Radio, Select, notification  } from 'antd';
-import { InfoCircleOutlined } from '@ant-design/icons';
-import './../style/CalcStep1.css';
+import "./../style/CalcStep1.css";
+import CalcStep2 from "./CalcStep2";
 
 const types = [
   {
     id: 1,
-    text: 'Открытый грунт'
+    text: "Открытый грунт",
   },
   {
     id: 2,
-    text: 'Парник'
-  }
+    text: "Парник",
+  },
 ];
 
 const { Option } = Select;
@@ -25,31 +23,34 @@ const CalcStep1 = () => {
 
   const openNotification = () => {
     notification.open({
-      message: 'Ошибка',
-      description:
-        'Не все поля заполнены',
+      message: "Ошибка",
+      description: "Не все поля заполнены",
       onClick: () => {
-        console.log('Notification Clicked!');
+        console.log("Notification Clicked!");
       },
     });
   };
 
   const renderType = () => {
-    const  data  = types
-    let template
-          
+    const data = types;
+    let template;
+
     if (data.length) {
-      template = data.map(function(item) {
-        return <Radio className="form-text" value={item.id}>{item.text}</Radio>
-      })
-    } 
-          
-    return template
-  }
+      template = data.map(function (item) {
+        return (
+          <Radio className="form-text" value={item.id}>
+            {item.text}
+          </Radio>
+        );
+      });
+    }
+
+    return template;
+  };
 
   const setState = (key, value) => {
-    data[key]= value;
-  }
+    data[key] = value;
+  };
 
   function onChangeRegion(value) {
     setState("region", value);
@@ -63,28 +64,24 @@ const CalcStep1 = () => {
     setState("type", e.target.value);
   }
 
-  
-
   const onFinish = (values: any) => {
-    if (!data['type'] || !data['region'] || !data['cult']) {
-      openNotification()
+    if (!data["type"] || !data["region"] || !data["cult"]) {
+      openNotification();
     } else {
-      ReactDOM.render(<CalcStep2 type={data}/>, document.querySelector('.step2'));
+      ReactDOM.render(
+        <CalcStep2 type={data} />,
+        document.querySelector(".step2")
+      );
     }
   };
 
   return (
     <React.Fragment>
       <div className="block block-1 calc">
-        <h1>Данные</h1>        
+        <h1>Данные</h1>
         <div className="block-3">
-          <Form 
-            form={form}
-            layout="vertical"
-            onFinish={onFinish}
-            >            
+          <Form form={form} layout="vertical" onFinish={onFinish}>
             <div className="col">
-              
               <p className="form-label">Регион</p>
               <div className="types">
                 <Select
@@ -92,12 +89,12 @@ const CalcStep1 = () => {
                   style={{ width: 300 }}
                   placeholder="Выберите регион"
                   optionFilterProp="children"
-                  onChange={onChangeRegion}              
+                  onChange={onChangeRegion}
                 >
                   <Option value="1">Йошкар-Ола</Option>
                   <Option value="2">Первый район</Option>
                   <Option value="3">Второй район</Option>
-                </Select>       
+                </Select>
               </div>
 
               <p className="form-label">Культура</p>
@@ -107,12 +104,12 @@ const CalcStep1 = () => {
                   style={{ width: 300 }}
                   placeholder="Выберите культуру"
                   optionFilterProp="children"
-                  onChange={onChange}              
+                  onChange={onChange}
                 >
                   <Option value="1">Капуста</Option>
                   <Option value="2">Картофель</Option>
                   <Option value="3">Свекла</Option>
-                </Select>       
+                </Select>
               </div>
 
               <Form.Item name="type" className="types">
@@ -122,7 +119,13 @@ const CalcStep1 = () => {
               </Form.Item>
 
               <Form.Item>
-                <Button type="primary" className="submitButton" htmlType="submit">Рассчитать</Button>
+                <Button
+                  type="primary"
+                  className="submitButton"
+                  htmlType="submit"
+                >
+                  Рассчитать
+                </Button>
               </Form.Item>
             </div>
           </Form>
