@@ -45,5 +45,10 @@
   .ant-form-item-control {
     width: 100%;
   }
+
+  
 }
 
+.block img {
+  max-width: 100%;
+}

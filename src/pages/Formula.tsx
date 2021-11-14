@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./../style/App.css";
 import "./../style/content.css";
-import Menu from "../components/Menu";
+import Menu from "../components/MenuAdmin";
 import Bread from "../components/Bread";
 import { Input, Slider, notification } from "antd";
 import "../style/Formula.css";
@@ -49,7 +49,7 @@ function Formula() {
 
   return (
     <div className="App">
-      <Menu />
+      <Menu type="set"/>
       <div className="content">
         <Bread />
         <div className="formula">

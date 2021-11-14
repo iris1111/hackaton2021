@@ -5,6 +5,8 @@
   padding: 0;
   box-sizing: border-box;
   position: relative;
+  font-family: Manrope;
+  font-style: normal;
 }
 
 body {
