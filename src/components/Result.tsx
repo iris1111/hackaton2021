@@ -3,6 +3,7 @@ import { ApexOptions } from "apexcharts";
 import React from "react";
 import Chart from "react-apexcharts";
 import ReactApexChart from "react-apexcharts";
+import { Button } from 'antd';
 import "../style/Result.css";
 import {
   YMaps,
@@ -23,10 +24,15 @@ function Result(props) {
       "Электроэнергия",
       "Орошение",
       "Содержание оборудования",
-      "Прочие расходы",
     ],
     dataLabels: { enabled: true },
-
+    colors: [function({ value, seriesIndex, w }) {
+      return '#205868'
+    }, function({ value, seriesIndex, w }) {
+      return '#00ff00'
+    }, function({ value, seriesIndex, w }) {
+      return '#0000ff'
+    }],
     chart: {
       width: "100%",
     },
@@ -34,9 +40,8 @@ function Result(props) {
       show: true,
       position: "bottom",
       formatter: function (seriesName, opts) {
-        console.log(seriesName, opts);
         return (
-          seriesName + " - <strong>" + series[opts.seriesIndex] + "</strong>"
+          seriesName + " <br /> <strong>" + series[opts.seriesIndex] + "</strong>"
         );
       },
       showForSingleSeries: true,
@@ -63,7 +68,7 @@ function Result(props) {
       },
     },
   };
-  const series = [44000, 10500, 43134, 7000];
+  const series = [44000, 10500, 43134];
   const locations = require("../data/locations.json");
   const placemarks: GeoObjectProps<PlacemarkGeometry>[] = [
     {
@@ -100,18 +105,16 @@ function Result(props) {
       enabledOnSeries: [1],
     },
     labels: [
-      "01 Jan 2001",
-      "02 Jan 2001",
-      "03 Jan 2001",
-      "04 Jan 2001",
-      "05 Jan 2001",
-      "06 Jan 2001",
-      "07 Jan 2001",
-      "08 Jan 2001",
-      "09 Jan 2001",
-      "10 Jan 2001",
-      "11 Jan 2001",
-      "12 Jan 2001",
+      "01 Dec 2021",
+      "02 Jul 2021",
+      "01 Dec 2022",
+      "02 Jul 2022",
+      "01 Dec 2023",
+      "02 Jul 2023",
+      "01 Dec 2024",
+      "02 Jul 2024",
+      "01 Dec 2025",
+      "02 Jul 2025",
     ],
     xaxis: {
       type: "datetime",
@@ -120,13 +123,13 @@ function Result(props) {
       {
         show: false,
         title: {
-          text: "Website Blog",
+          text: "-",
         },
       },
       {
         opposite: true,
         title: {
-          text: "Social Media",
+          text: "Прибыль",
         },
       },
     ],
@@ -136,12 +139,12 @@ function Result(props) {
     {
       name: "",
       type: "column",
-      data: [-1040, -505, -414, -171, 227, 413, 201, 352, 752, 320, 257, 160],
+      data: [-1040, -705, -814, -571, -427, -113, -201, 2, -12, 320, 457, 660],
     },
     {
       name: "Прибыль",
       type: "line",
-      data: [-1040, -505, -414, -171, 227, 413, 201, 352, 752, 320, 257, 160],
+      data: [-1040, -705, -814, -571, -427, -113, -201, 2, -12, 320, 457, 660],
     },
   ];
   return (
@@ -199,6 +202,7 @@ function Result(props) {
           </div>
           <div className="card-rent">Рентабельность</div>
           <div className="card-rent-value">Высокая</div>
+          <Button type="primary" className="submitButton submitButtonWhite" >Сохранить в PDF</Button>
         </div>
       </div>
     </div>

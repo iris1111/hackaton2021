@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, Input, Button, Radio, Select } from 'antd';
+import { Form, Input, Button, Radio, Select,  Tooltip } from 'antd';
 
 const cults = [
   {
@@ -28,9 +28,9 @@ const CalcStep3 = () => {
     <div className="types">
       <p>Для выращивания выбранной культуры в этом районе на 1&nbsp;га за сезон понадобится: <br />
         <ul>
-          <li><b>электроэнергии</b> - 15000 кВт</li>
-          <li><b>воды</b> - 20000 м<sup>3</sup></li>
-          <li><b>затраты на содержание оборудование</b> - 200 000 рублей</li>
+          <li><Tooltip title="Затраты на освещение парников и складов" color="cian" ><b>электроэнергии</b></Tooltip> - 15 000 кВт</li>
+          <li><Tooltip title="Затраты на дополнительный полив" color="cian" ><b>воды</b></Tooltip> - 20 000 м<sup>3</sup></li>
+          <li><Tooltip title="Амортизация техники" color="cian" ><b>затраты на содержание оборудование</b></Tooltip> - 200 000 рублей</li>
         </ul>
       </p>
       <br />

@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 import CalcStep2 from './CalcStep2';
 import './../style/CalcStep1.css';
 import { Form, Input, Button, Radio, Select, notification  } from 'antd';
-import { InfoCircleOutlined } from '@ant-design/icons';
-import './../style/CalcStep1.css';
 
 const types = [
   {
@@ -13,24 +11,23 @@ const types = [
   },
   {
     id: 2,
-    text: 'Парник'
+    text: 'Теплицы'
   }
 ];
-
 const { Option } = Select;
+const cultures = JSON.parse(localStorage.getItem("cultures")!);
+const regions = JSON.parse(localStorage.getItem("regions")!);
 
 const CalcStep1 = () => {
   const data = {};
+  
   const [form] = Form.useForm();
 
   const openNotification = () => {
     notification.open({
       message: 'Ошибка',
       description:
-        'Не все поля заполнены',
-      onClick: () => {
-        console.log('Notification Clicked!');
-      },
+        'Не все поля заполнены'
     });
   };
 
@@ -40,7 +37,7 @@ const CalcStep1 = () => {
           
     if (data.length) {
       template = data.map(function(item) {
-        return <Radio className="form-text" value={item.id}>{item.text}</Radio>
+        return <Radio className="form-text" value={item.id} key={item.id}>{item.text}</Radio>
       })
     } 
           
@@ -62,9 +59,7 @@ const CalcStep1 = () => {
   function onChangeType(e) {
     setState("type", e.target.value);
   }
-
-  
-
+ 
   const onFinish = (values: any) => {
     if (!data['type'] || !data['region'] || !data['cult']) {
       openNotification()
@@ -94,9 +89,9 @@ const CalcStep1 = () => {
                   optionFilterProp="children"
                   onChange={onChangeRegion}              
                 >
-                  <Option value="1">Йошкар-Ола</Option>
-                  <Option value="2">Первый район</Option>
-                  <Option value="3">Второй район</Option>
+                  {regions!.map((region) => {
+                    return <Option value={region.id}>{region.name}</Option>
+                  })}
                 </Select>       
               </div>
 
@@ -109,9 +104,9 @@ const CalcStep1 = () => {
                   optionFilterProp="children"
                   onChange={onChange}              
                 >
-                  <Option value="1">Капуста</Option>
-                  <Option value="2">Картофель</Option>
-                  <Option value="3">Свекла</Option>
+                  {cultures!.map((culture) => {
+                    return <Option value={culture.id}>{culture.name}</Option>
+                  })}
                 </Select>       
               </div>
 

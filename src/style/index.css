@@ -42,7 +42,43 @@ h1 {
 }
 
 
+.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  border-radius: 12px;
+  height: 42px;
+}
 
+.ant-select:not(.ant-select-disabled):hover .ant-select-selector {
+  border-color: #21B69B;
+}
+
+.ant-select-focused .ant-select-selector {
+  border-color: #21B69B !important;
+  box-shadow: 0 0 0 2px #21b69b20 !important;
+}
+
+.ant-select-selection-placeholder {
+  line-height: 39px !important;
+}
+
+.ant-radio-wrapper:hover .ant-radio, .ant-radio:hover .ant-radio-inner, .ant-radio-input:focus + .ant-radio-inner {
+  border-color: #21B69B !important;
+}
+
+.ant-radio-checked .ant-radio-inner {
+  border-color: #21B69B !important;
+}
+
+.ant-radio-inner::after {
+  background-color: #21B69B !important;
+}
+
+.ant-select-single.ant-select-show-arrow .ant-select-selection-item, .ant-select-single.ant-select-show-arrow .ant-select-selection-placeholder {
+  line-height: 39px !important;
+}
+
+.ant-select-show-search.ant-select:not(.ant-select-customize-input) .ant-select-selector input {
+  margin-top: 5px;
+}
 
 
 @media (prefers-reduced-motion: no-preference) {

@@ -1,6 +1,7 @@
 .result-content {
   display: flex;
   justify-content: center;
+  align-items: stretch;
 }
 .result-item__title {
   margin: 15px;
@@ -8,9 +9,9 @@
 .result-item {
   width: 100%;
   border-radius: 15px;
-  height: 510px;
   background-color: white;
   margin: 5px 20px 0px 0px;
+  padding-bottom: 20px;
 }
 .result-item:last-child {
   margin-right: 0;
@@ -28,7 +29,7 @@
 }
 .result-item_subitem-top {
   display: flex;
-  height: 255px;
+  max-height: 285px;
   flex-direction: column;
   background-color: white;
   border-radius: 15px;
@@ -68,4 +69,45 @@
   float: left;
 }
 .card-occup-number {
+}
+
+
+
+.apexcharts-pie-label, .apexcharts-datalabels, .apexcharts-datalabel, .apexcharts-datalabel-label, .apexcharts-datalabel-value {
+  display: none;
+}
+.apexcharts-legend > * {
+  max-width: 30%;
+  margin: 0 5px 10px !important;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.apexcharts-legend-marker {
+  height: 8px !important;
+  width: 45% !important;
+  position: absolute !important;
+  bottom: -2px;
+  top: inherit !important;
+}
+
+span.apexcharts-legend-text{
+  font-family: Manrope;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  color: #9AA0B9;
+  display: block;
+}
+.apexcharts-legend-text strong {
+  display: block;
+  width: 100%;
+  font-size: 22px;
+}
+
+@media screen and (max-width:750px) { 
+  .result-content {
+    display: block;
+  }
 }
