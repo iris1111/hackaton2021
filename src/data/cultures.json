@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Пшеница",
+    "name": "Картофель",
     "tempStart": 21,
     "tempEnd": 30,
     "vlazhStart": 400,
@@ -12,7 +12,73 @@
   },
   {
     "id": 2,
-    "name": "Ячмень",
+    "name": "Капуста",
+    "tempStart": 21,
+    "tempEnd": 30,
+    "vlazhStart": 400,
+    "vlazhEnd": 800,
+    "pochva": "Takaya",
+    "phPochvaStart": 4.5,
+    "phPochvaEnd": 7
+  },
+  {
+    "id": 3,
+    "name": "Морковь",
+    "tempStart": 21,
+    "tempEnd": 30,
+    "vlazhStart": 400,
+    "vlazhEnd": 800,
+    "pochva": "Takaya",
+    "phPochvaStart": 4.5,
+    "phPochvaEnd": 7
+  },
+  {
+    "id": 4,
+    "name": "Свекла",
+    "tempStart": 21,
+    "tempEnd": 30,
+    "vlazhStart": 400,
+    "vlazhEnd": 800,
+    "pochva": "Takaya",
+    "phPochvaStart": 4.5,
+    "phPochvaEnd": 7
+  },
+  {
+    "id": 5,
+    "name": "Огурец",
+    "tempStart": 21,
+    "tempEnd": 30,
+    "vlazhStart": 400,
+    "vlazhEnd": 800,
+    "pochva": "Takaya",
+    "phPochvaStart": 4.5,
+    "phPochvaEnd": 7
+  },
+  {
+    "id": 6,
+    "name": "Дыня",
+    "tempStart": 21,
+    "tempEnd": 30,
+    "vlazhStart": 400,
+    "vlazhEnd": 800,
+    "pochva": "Takaya",
+    "phPochvaStart": 4.5,
+    "phPochvaEnd": 7
+  },
+  {
+    "id": 7,
+    "name": "Арбуз",
+    "tempStart": 21,
+    "tempEnd": 30,
+    "vlazhStart": 400,
+    "vlazhEnd": 800,
+    "pochva": "Takaya",
+    "phPochvaStart": 4.5,
+    "phPochvaEnd": 7
+  },
+  {
+    "id": 8,
+    "name": "Рис",
     "tempStart": 21,
     "tempEnd": 30,
     "vlazhStart": 400,
