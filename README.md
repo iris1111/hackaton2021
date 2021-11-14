@@ -1,18 +1,52 @@
-### `yarn start`
+## Реализованная функциональность
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Прототип расчета бизнес-плана
+- Изменение формулы расчета
+- Изменение индекса для принятия решения о рентабельности возделывания культуры в выбранном районе
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Особенность проекта в следующем:
 
-### `yarn build`
+1. внешняя - для конечного пользователя (потенциального фермера).Посетитель может ввести исходные данные и получить результат в виде рекомендаций - какие культуры возможны к возделыванию, какие нет.
+2. админка - для модератора, админа.
+   Возможность настраивать, редактировать конкретные показатели, изменять их вес в общем расчете, настраивать влияние энергозатрат на финансовые показатели.
+   Уникальность: гибкий инструмент - можно подстраивать под различные нужды, регионы, корректировать со временем, использовать новые вводные без доработки кода. Максимально простой, с удобной навигацией, адаптивный для разных устройств.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Основной стек технологий:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Docker\Docker compose.
+- Nginx
+- React (TypeScript).
+- Nest.js (TypeScript)
+- Mysql
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Демо:
 
+Демо сервиса доступно по [ссылке](http://79.141.65.9:3000/main)
+
+# Установка
+
+Для запуска проекта требуется:
+
+- nodejs, npm
+
+## Запуск
+
+### Development
+
+`npm install`
+
+`npm run start`
+
+### Production
+
+`docker build -t app . `
+
+`docker run -p3000:80 app`
+
+Сервис будет доступен по порту 3000
+
+### Разработчики
+
+Ирина Поминова fullstack [telegram](t.me/irina_pominova)
+
+Андрей Моханов fullstack [telegram](t.me/nvnortz)
