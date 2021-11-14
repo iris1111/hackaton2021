@@ -56,3 +56,6 @@
 .ant-radio-group {
   display: flex !important;
 }
+span.ant-radio+* {
+  height: 11px;
+}
